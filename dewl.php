@@ -1,3 +1,4 @@
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -5,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
  <link rel="stylesheet" type="text/css" href="dewl.css">   
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/bootstrap.min.css">
 <script src="bootstrap-4.3.1-dist/js/bootstrap.js"></script> 
@@ -14,9 +16,9 @@
 <!--navigation-->
 <section id="nav-bar">
 <nav class="navbar navbar-expand-lg navbar-light ">
-  <a class="navbar-brand" href="#"><img src="img/logo.jpg"></a>
+  <a class="navbar-brand" href="#"><img src="logo.jpg"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-   
+
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
@@ -50,13 +52,13 @@
    </ol>
    <div class="carousel-inner">
      <div class="carousel-item active">
-      <img class= "d-block img fluid" src="img/image7.jpg" alt="..." width="100%" height="90%" >
+      <img class= "d-block img fluid" src="image7.jpg" alt="..." width="100%" height="90%">
       <div class="carousel-caption ">
         <h5>WE CREATE RESPONSIVE WEBSITES</h5>
       </div>
       </div>
      <div class="carousel-item">
-      <img class= "d-block img fluid" src="img/image6.jpg" alt="..."width="100%" height="90%">
+      <img class= "d-block img fluid" src="image6.jpg" alt="..."width="100%" height="90%">
       <div class="carousel-caption">
         <h5 style="color:white;"> WE MAKE ANDROID APPLICATIONS</h5>
       </div>
@@ -80,10 +82,10 @@
      <div class="col-md-6">
      <h2>About Us</h2>
      <div class="about-content">
-         DJJJJJJJJJJJKAKAKAKJSDJJKSDKSJDDSJKJDS
+         DJJJJJJJJJJJKAKAKAKJSDJJKSDKSJDDSJKJDSJKDSKJ
          DJSKSDDDDDDKSDKJSKJKJSDJKSDKJSKJSDJSD
          DSNKSDJSDSDJKCJCSJDSLS
-         SCNNNNNNNJKSKDHDSJSDSDKDSKJDSJSDJSDJJS
+         SCNNNNNNNJKSKDHDSJSDSDKDSKJDSJSDJSDJJSD
          KJSDSDJKSJKSDJJSDJDJSDKJ
          THANK YOU!!!
     </div>
@@ -200,22 +202,20 @@
     <h1>Get in Touch</h1>
     <div class="row">
       <div class="col-md-6">
-        <form class="contact-form" action="Mailto:dewl_tech@yahoo.com" method="POST" enctype="text/plain">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="your name">
-          </div>
-           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Subject">
-          </div>
-           <div class="form-group">
-            <input type="email" class="form-control" placeholder="Email Id">
-          </div>
-           <div class="form-group">
-            <textarea  class="form-control" rows="4" placeholder="Your Message"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">SEND MESSAGE</button>
+        <form class="contact-form">
+            <label> Name</label>
+            <input type="text" class="form-control" name="yourname" placeholder="your name">
+            <label>E-mail</label>
+            <input type="email" class="form-control"  name="email" placeholder="Email Id">
+            <label> Subject </label>
+            <input type="text" class="form-control"  name="subject" placeholder="Subject">
+            <label>Message</label>
+            <textarea  class="form-control" rows="4"  name="message" placeholder="Your Message"></textarea>
+         
+         <input class="centered" type="submit" name="submit" value="Send email"/>
         </form>
       </div>
+      
       <div class="col-md-6 contact-info">
         <div class="follow"><b>Address:</b><i class="fa fa-map-marker"></i>xyt road, lagos ,NG</div>
         <div class="follow"><b>Phone:</b><i class="fa fa-phone"></i>xyt road, lagos ,NG</div>
@@ -234,7 +234,24 @@
   <div class="container">
     <p> DEWL TECH</p>
     </div>
-  </section>  
+  </section> 
+
+<?php
+if(isset($_POST['submit']))
+{
+    $name=$_POST['your name'];
+    $email=$_POST['Email id'];
+    $subject=$_POST['subject'];
+    $message=$_POST['message'];
+    $adminwebsite = "okparathankgod55@gmail.com";
+
+    $headers = "Reply-to:$email";
+    mail($adminwebsite,$subject,$message, $headers);
+}
+
+?>
+
+
 </body>
 <script src="js/smoothscroll.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -243,6 +260,6 @@
  <script>
 	var scroll = new SmoothScroll('a[href*="#"]');
 </script>
- 
+ <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="bootstrap-4.3.1-dist/js/bootstrap.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
 
 </html>
